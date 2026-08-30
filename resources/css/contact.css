@@ -1,0 +1,417 @@
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-page {
+    min-height: 100vh;
+    background: #f8fafc;
+    padding: 70px 30px 90px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.contact-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.contact-header {
+    width: 46%;
+    text-align: left;
+    margin: 0;
+    position: absolute;
+    margin-top: 45px;
+}
+
+.contact-header h1 {
+    margin: 0 0 18px;
+    color: #062554;
+    font-size: 58px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.contact-header p {
+    margin: 0;
+    max-width: 440px;
+    color: #45658f;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT CARD
+========================================================= */
+
+.contact-card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEFT INFORMATION PANEL
+========================================================= */
+
+.contact-info {
+    background: transparent;
+    color: #062554;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.contact-info h2 {
+    margin: 0 0 20px;
+    color: #062554;
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: #45658f;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contact-detail i {
+    width: 20px;
+    min-width: 20px;
+    margin-top: 4px;
+    color: #dc2626;
+    font-size: 17px;
+}
+
+.contact-detail span {
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   RIGHT FORM SECTION
+========================================================= */
+
+.contact-form-wrapper {
+    padding: 30px 28px 28px;
+    background: #ffffff;
+    border: 1px solid #dfe4ea;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-message {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 7px;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    color: #166534;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #061d3e;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INPUT & TEXTAREA
+========================================================= */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #d4dbe5;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    outline: none;
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-group input {
+    min-height: 48px;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.form-group textarea {
+    min-height: 125px;
+    resize: none;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #58759a;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: #ffffff;
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.contact-submit {
+    width: auto;
+    min-width: 150px;
+    min-height: 45px;
+    align-self: flex-start;
+
+    padding: 11px 24px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #e50914;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.contact-submit:hover {
+    background: #c90711;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   BUTTON ACTIVE
+========================================================= */
+
+.contact-submit:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .contact-page {
+        min-height: auto;
+        padding: 55px 25px 70px;
+    }
+
+    .contact-container {
+        max-width: 750px;
+    }
+
+    .contact-header {
+        width: 100%;
+        position: static;
+        margin: 0 0 35px;
+        text-align: center;
+    }
+
+    .contact-header h1 {
+        font-size: 50px;
+    }
+
+    .contact-header p {
+        margin: 0 auto;
+        max-width: 600px;
+        font-size: 17px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    .contact-form-wrapper {
+        padding: 30px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .contact-page {
+        padding: 35px 15px 50px;
+    }
+
+    .contact-header {
+        margin-bottom: 25px;
+    }
+
+    .contact-header h1 {
+        font-size: 38px;
+        letter-spacing: -0.5px;
+    }
+
+    .contact-header p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .contact-form-wrapper {
+        padding: 24px 18px;
+    }
+
+    .contact-form {
+        gap: 16px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 13px;
+    }
+
+    .form-group input {
+        min-height: 45px;
+    }
+
+    .form-group textarea {
+        min-height: 110px;
+    }
+
+    .contact-submit {
+        width: 100%;
+        min-height: 45px;
+    }
+}

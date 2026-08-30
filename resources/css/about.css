@@ -1,0 +1,503 @@
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.about-container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.about-hero {
+    padding: 80px 0;
+
+    background: linear-gradient(
+        to right,
+        #b91c1c,
+        #dc2626
+    );
+}
+
+.about-hero-content {
+    text-align: center;
+}
+
+
+/* =========================================================
+   HERO BADGE
+========================================================= */
+
+.about-badge {
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: #fee2e2;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.about-hero-title {
+    margin: 24px 0 0;
+
+    color: #ffffff;
+
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.about-hero-title span {
+    color: #fee2e2;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.about-hero-description {
+    max-width: 768px;
+
+    margin: 24px auto 0;
+
+    color: #fee2e2;
+
+    font-size: 18px;
+    line-height: 2;
+}
+
+
+/* =========================================================
+   ABOUT FEATURES SECTION
+========================================================= */
+
+.about-features-section {
+    padding: 80px 0;
+
+    background: #f8fafc;
+}
+
+.about-features-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 32px;
+}
+
+
+/* =========================================================
+   ABOUT FEATURE CARD
+========================================================= */
+
+.about-feature-card {
+    padding: 32px;
+
+    background: #ffffff;
+
+    border-radius: 24px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.about-feature-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.about-feature-icon {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 16px;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   FEATURE TITLE
+========================================================= */
+
+.about-feature-title {
+    margin: 0 0 16px;
+
+    color: #1f2937;
+
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FEATURE DESCRIPTION
+========================================================= */
+
+.about-feature-description {
+    margin: 0;
+
+    color: #4b5563;
+
+    line-height: 2;
+}
+
+
+/* =========================================================
+   WHAT WE PROVIDE
+========================================================= */
+
+.provide-section {
+    padding: 80px 0;
+
+    background: #ffffff;
+}
+
+.provide-header {
+    margin-bottom: 48px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PROVIDE TITLE
+========================================================= */
+
+.provide-title {
+    margin: 0;
+
+    color: #1f2937;
+
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PROVIDE DESCRIPTION
+========================================================= */
+
+.provide-description {
+    max-width: 672px;
+
+    margin: 16px auto 0;
+
+    color: #4b5563;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROVIDE GRID
+========================================================= */
+
+.provide-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+
+/* =========================================================
+   PROVIDE CARD
+========================================================= */
+
+.provide-card {
+    padding: 24px;
+
+    text-align: center;
+
+    background: #f9fafb;
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.provide-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   PROVIDE ICON
+========================================================= */
+
+.provide-icon {
+    margin-bottom: 16px;
+
+    color: #dc2626;
+
+    font-size: 36px;
+}
+
+
+/* =========================================================
+   PROVIDE CARD TITLE
+========================================================= */
+
+.provide-card-title {
+    margin: 0 0 8px;
+
+    color: #1f2937;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PROVIDE CARD DESCRIPTION
+========================================================= */
+
+.provide-card-description {
+    margin: 0;
+
+    color: #4b5563;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.about-cta {
+    padding: 64px 0;
+
+    background: #dc2626;
+}
+
+.about-cta-container {
+    width: 90%;
+    max-width: 896px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CTA TITLE
+========================================================= */
+
+.about-cta-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CTA DESCRIPTION
+========================================================= */
+
+.about-cta-description {
+    margin: 16px 0 0;
+
+    color: #fee2e2;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.about-cta-button {
+    display: inline-block;
+
+    margin-top: 32px;
+
+    padding: 12px 32px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #dc2626;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.about-cta-button:hover {
+    background: #fef2f2;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .about-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .provide-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-hero-title {
+        font-size: 42px;
+    }
+
+    .provide-title {
+        font-size: 34px;
+    }
+
+    .about-cta-title {
+        font-size: 34px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        padding: 60px 0;
+    }
+
+    .about-features-section,
+    .provide-section {
+        padding: 60px 0;
+    }
+
+    .about-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .provide-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-title {
+        font-size: 34px;
+    }
+
+    .about-hero-description {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .provide-title {
+        font-size: 30px;
+    }
+
+    .about-cta {
+        padding: 50px 0;
+    }
+
+    .about-cta-title {
+        font-size: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .about-container {
+        width: 92%;
+    }
+
+    .about-feature-card {
+        padding: 24px;
+    }
+
+    .about-hero-title {
+        font-size: 30px;
+    }
+
+    .provide-title {
+        font-size: 27px;
+    }
+
+    .about-cta-title {
+        font-size: 27px;
+    }
+
+}

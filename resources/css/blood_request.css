@@ -1,0 +1,790 @@
+/* =========================================================
+   BLOOD REQUEST PAGE
+========================================================= */
+
+.blood-request-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 1rem;
+
+    background: linear-gradient(
+        135deg,
+        #fff5f5 0%,
+        #ffe3e3 100%
+    );
+
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.blood-request-container {
+    width: 100%;
+
+    max-width: 64rem;
+
+    background: #ffffff;
+
+    border-radius: 1rem;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 50px -12px rgba(220, 38, 38, 0.20);
+}
+
+.blood-request-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.blood-request-left {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-height: 100%;
+
+    padding: 3rem;
+
+    background: linear-gradient(
+        135deg,
+        #dc2626 0%,
+        #b91c1c 100%
+    );
+}
+
+.blood-drop-large {
+    margin-bottom: 1rem;
+
+    font-size: 3rem;
+
+    line-height: 1;
+}
+
+.blood-request-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 2.25rem;
+
+    line-height: 2.5rem;
+
+    font-weight: 700;
+}
+
+.blood-request-subtitle {
+    margin-top: 0.5rem;
+
+    margin-bottom: 0;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 0.875rem;
+
+    line-height: 1.5;
+}
+
+.blood-request-features {
+    display: block;
+
+    margin-top: 2rem;
+}
+
+.blood-request-feature-list {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.75rem;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 0.875rem;
+}
+
+.feature-dot {
+    width: 0.5rem;
+
+    height: 0.5rem;
+
+    flex-shrink: 0;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.blood-request-right {
+    padding: 2rem;
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.request-success-message {
+    margin-bottom: 1.25rem;
+
+    padding: 0.75rem 1rem;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 0.75rem;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+
+    font-size: 0.875rem;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.request-error-message {
+    margin-bottom: 1.25rem;
+
+    padding: 1rem;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 0.75rem;
+
+    background: #fef2f2;
+}
+
+.request-error-message ul {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    color: #dc2626;
+
+    font-size: 0.875rem;
+}
+
+.request-error-message li + li {
+    margin-top: 0.25rem;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.request-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+}
+
+.request-field {
+    min-width: 0;
+}
+
+.request-full-field {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.request-label {
+    display: block;
+
+    margin-bottom: 0.375rem;
+
+    color: #374151;
+
+    font-size: 0.875rem;
+
+    font-weight: 500;
+}
+
+.required-star {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   INPUT / SELECT
+========================================================= */
+
+.request-input {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.625rem 1rem;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 0.75rem;
+
+    background: rgba(249, 250, 251, 0.8);
+
+    color: #374151;
+
+    font-family: inherit;
+
+    font-size: 0.875rem;
+
+    outline: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.request-input:focus {
+    background: #ffffff;
+
+    border-color: #dc2626;
+
+    box-shadow:
+        0 0 0 4px rgba(220, 38, 38, 0.10);
+}
+
+.request-input::placeholder {
+    color: #9ca3af;
+}
+
+select.request-input {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   READONLY INPUT
+========================================================= */
+
+.request-readonly {
+    background: #f3f4f6;
+
+    color: #6b7280;
+
+    cursor: not-allowed;
+}
+
+.request-readonly:focus {
+    background: #f3f4f6;
+
+    border-color: #e5e7eb;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.request-textarea {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.625rem 1rem;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 0.75rem;
+
+    background: rgba(249, 250, 251, 0.8);
+
+    color: #374151;
+
+    font-family: inherit;
+
+    font-size: 0.875rem;
+
+    line-height: 1.5;
+
+    outline: none;
+
+    resize: vertical;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.request-textarea:focus {
+    background: #ffffff;
+
+    border-color: #dc2626;
+
+    box-shadow:
+        0 0 0 4px rgba(220, 38, 38, 0.10);
+}
+
+.request-textarea::placeholder {
+    color: #9ca3af;
+}
+
+.request-address-textarea {
+    min-height: 80px;
+}
+
+.request-cause-textarea {
+    min-height: 100px;
+}
+
+
+/* =========================================================
+   GENDER
+========================================================= */
+
+.request-gender-options {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-top: 0.25rem;
+}
+
+.request-gender-option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    color: #374151;
+
+    font-size: 0.875rem;
+
+    cursor: pointer;
+}
+
+.request-gender-option input {
+    width: 1rem;
+
+    height: 1rem;
+
+    margin: 0;
+
+    accent-color: #dc2626;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.request-submit-wrapper {
+    grid-column: span 2;
+
+    margin-top: 0.5rem;
+}
+
+.request-submit-btn {
+    width: 100%;
+
+    padding: 0.75rem;
+
+    border: none;
+
+    border-radius: 0.75rem;
+
+    background: linear-gradient(
+        to right,
+        #dc2626,
+        #b91c1c
+    );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.request-submit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(220, 38, 38, 0.25);
+}
+
+.request-submit-btn:active {
+    transform: translateY(0);
+}
+
+.request-submit-btn:focus {
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(220, 38, 38, 0.15);
+}
+
+
+/* =========================================================
+   DONOR REGISTRATION
+========================================================= */
+
+.donor-registration {
+    margin-top: 1.5rem;
+
+    padding-top: 1.25rem;
+
+    border-top: 1px solid #f3f4f6;
+}
+
+.donor-registration-content {
+    text-align: center;
+}
+
+.donor-question {
+    margin: 0 0 0.5rem;
+
+    color: #6b7280;
+
+    font-size: 0.875rem;
+}
+
+.donor-registration-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    padding: 0.625rem 1.25rem;
+
+    border-radius: 0.75rem;
+
+    background: #fef2f2;
+
+    color: #dc2626;
+
+    font-size: 0.875rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.donor-registration-btn:hover {
+    background: #fee2e2;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+.blood-request-login-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 1rem;
+
+    background: linear-gradient(
+        135deg,
+        #fff5f5 0%,
+        #ffe3e3 100%
+    );
+
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.blood-request-login-card {
+    width: 100%;
+
+    max-width: 28rem;
+
+    padding: 2.5rem 2rem;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 1rem;
+
+    box-shadow:
+        0 25px 50px -12px rgba(220, 38, 38, 0.18);
+}
+
+
+/* =========================================================
+   LOGIN ICON
+========================================================= */
+
+.login-blood-icon-wrapper {
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 1.25rem;
+}
+
+.login-blood-icon {
+    width: 5rem;
+
+    height: 5rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: #fef2f2;
+
+    font-size: 3rem;
+}
+
+
+/* =========================================================
+   LOGIN CONTENT
+========================================================= */
+
+.login-request-title {
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 1.875rem;
+
+    line-height: 2.25rem;
+
+    font-weight: 700;
+}
+
+.login-request-description {
+    margin: 0.75rem 0 0;
+
+    color: #6b7280;
+
+    font-size: 0.875rem;
+
+    line-height: 1.5rem;
+}
+
+.login-request-divider {
+    margin-top: 1.5rem;
+
+    margin-bottom: 1.25rem;
+
+    border-top: 1px solid #f3f4f6;
+}
+
+.login-request-message {
+    margin: 0 0 1rem;
+
+    color: #4b5563;
+
+    font-size: 0.875rem;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-request-btn {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.75rem;
+
+    border-radius: 0.75rem;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+
+.login-request-btn:hover {
+    background: #b91c1c;
+
+    box-shadow:
+        0 10px 20px rgba(220, 38, 38, 0.15);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BACK HOME
+========================================================= */
+
+.back-home-btn {
+    display: inline-block;
+
+    margin-top: 1.25rem;
+
+    color: #6b7280;
+
+    font-size: 0.875rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+.back-home-btn:hover {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .blood-request-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blood-request-left {
+        min-height: 280px;
+
+        padding: 2rem;
+    }
+
+    .blood-request-right {
+        max-height: none;
+
+        padding: 1.5rem;
+    }
+
+    .blood-request-title {
+        font-size: 2rem;
+
+        line-height: 2.25rem;
+    }
+
+    .blood-request-features {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .blood-request-page {
+        padding: 0.75rem;
+    }
+
+    .request-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .request-full-field,
+    .request-submit-wrapper {
+        grid-column: span 1;
+    }
+
+    .blood-request-left {
+        padding: 1.5rem;
+    }
+
+    .blood-request-right {
+        padding: 1.25rem;
+    }
+
+    .blood-request-login-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .request-gender-options {
+        gap: 0.75rem;
+    }
+}

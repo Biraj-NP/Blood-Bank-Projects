@@ -1,0 +1,783 @@
+/* =========================================================
+   DONOR REGISTRATION PAGE
+========================================================= */
+
+.donor-register-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    background: linear-gradient(
+        135deg,
+        #fff5f5 0%,
+        #ffe3e3 100%
+    );
+
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.donor-register-container {
+    width: 100%;
+    max-width: 64rem;
+
+    background: #ffffff;
+
+    border-radius: 1rem;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 50px -12px rgba(220, 38, 38, 0.20);
+}
+
+.donor-register-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.donor-register-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100%;
+
+    padding: 3rem;
+
+    background: linear-gradient(
+        135deg,
+        #dc2626 0%,
+        #b91c1c 100%
+    );
+}
+
+.donor-register-drop {
+    margin-bottom: 1rem;
+
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.donor-register-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+
+    font-weight: 700;
+}
+
+.donor-register-subtitle {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 0.875rem;
+}
+
+.donor-register-features {
+    display: block;
+
+    margin-top: 2rem;
+}
+
+.donor-feature-list {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.75rem;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 0.875rem;
+}
+
+.donor-feature-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+
+    flex-shrink: 0;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.donor-register-right {
+    padding: 2rem;
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.donor-success-message {
+    margin-bottom: 1.25rem;
+
+    padding: 0.75rem 1rem;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 0.75rem;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+
+    font-size: 0.875rem;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.donor-error-message {
+    margin-bottom: 1.25rem;
+
+    padding: 1rem;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 0.75rem;
+
+    background: #fef2f2;
+}
+
+.donor-error-message ul {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    color: #dc2626;
+
+    font-size: 0.875rem;
+}
+
+.donor-error-message li + li {
+    margin-top: 0.25rem;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.donor-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+}
+
+.donor-field {
+    min-width: 0;
+}
+
+.donor-full-field {
+    grid-column: span 2;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.donor-label {
+    display: block;
+
+    margin-bottom: 0.375rem;
+
+    color: #374151;
+
+    font-size: 0.875rem;
+
+    font-weight: 500;
+}
+
+.donor-required {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.donor-input {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.625rem 1rem;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 0.75rem;
+
+    background: rgba(249, 250, 251, 0.8);
+
+    color: #374151;
+
+    font-family: inherit;
+
+    font-size: 0.875rem;
+
+    outline: none;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.donor-input:focus {
+    background: #ffffff;
+
+    border-color: #dc2626;
+
+    box-shadow:
+        0 0 0 4px rgba(220, 38, 38, 0.10);
+}
+
+.donor-input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   READONLY INPUT
+========================================================= */
+
+.donor-readonly {
+    background: #f3f4f6;
+
+    color: #6b7280;
+
+    cursor: not-allowed;
+}
+
+.donor-readonly:focus {
+    background: #f3f4f6;
+
+    border-color: #e5e7eb;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+select.donor-input {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.donor-textarea {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    min-height: 80px;
+
+    padding: 0.625rem 1rem;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 0.75rem;
+
+    background: rgba(249, 250, 251, 0.8);
+
+    color: #374151;
+
+    font-family: inherit;
+
+    font-size: 0.875rem;
+
+    line-height: 1.5;
+
+    outline: none;
+
+    resize: vertical;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.donor-textarea:focus {
+    background: #ffffff;
+
+    border-color: #dc2626;
+
+    box-shadow:
+        0 0 0 4px rgba(220, 38, 38, 0.10);
+}
+
+.donor-textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================================================
+   GENDER
+========================================================= */
+
+.gender-options {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-top: 0.25rem;
+}
+
+.gender-option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.5rem;
+
+    color: #374151;
+
+    font-size: 0.875rem;
+
+    cursor: pointer;
+}
+
+.gender-option input {
+    width: 1rem;
+
+    height: 1rem;
+
+    margin: 0;
+
+    accent-color: #dc2626;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.donor-submit-wrapper {
+    grid-column: span 2;
+
+    margin-top: 0.5rem;
+}
+
+.donor-submit-btn {
+    width: 100%;
+
+    padding: 0.75rem;
+
+    border: none;
+
+    border-radius: 0.75rem;
+
+    background: linear-gradient(
+        to right,
+        #dc2626,
+        #b91c1c
+    );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.donor-submit-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(220, 38, 38, 0.25);
+}
+
+.donor-submit-btn:active {
+    transform: translateY(0);
+}
+
+.donor-submit-btn:focus {
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(220, 38, 38, 0.15);
+}
+
+
+/* =========================================================
+   FORM FOOTER
+========================================================= */
+
+.donor-form-footer {
+    margin-top: 1.5rem;
+
+    padding-top: 1.25rem;
+
+    border-top: 1px solid #f3f4f6;
+}
+
+.donor-footer-content {
+    text-align: center;
+}
+
+.donor-footer-question {
+    margin: 0 0 0.5rem;
+
+    color: #6b7280;
+
+    font-size: 0.875rem;
+}
+
+.blood-request-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.5rem;
+
+    padding: 0.625rem 1.25rem;
+
+    border-radius: 0.75rem;
+
+    background: #fef2f2;
+
+    color: #dc2626;
+
+    font-size: 0.875rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.blood-request-link:hover {
+    background: #fee2e2;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOGIN REQUIRED PAGE
+========================================================= */
+
+.donor-login-page {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 1rem;
+
+    background: linear-gradient(
+        135deg,
+        #fff5f5 0%,
+        #ffe3e3 100%
+    );
+
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.donor-login-card {
+    width: 100%;
+
+    max-width: 28rem;
+
+    padding: 2.5rem 2rem;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 1rem;
+
+    box-shadow:
+        0 25px 50px -12px rgba(220, 38, 38, 0.20);
+}
+
+
+/* =========================================================
+   LOGIN ICON
+========================================================= */
+
+.donor-login-icon-wrapper {
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 1.25rem;
+}
+
+.donor-login-icon {
+    width: 5rem;
+
+    height: 5rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: #fef2f2;
+
+    font-size: 3rem;
+}
+
+
+/* =========================================================
+   LOGIN TEXT
+========================================================= */
+
+.donor-login-title {
+    margin: 0;
+
+    color: #1f2937;
+
+    font-size: 1.875rem;
+
+    line-height: 2.25rem;
+
+    font-weight: 700;
+}
+
+.donor-login-description {
+    margin: 0.75rem 0 0;
+
+    color: #6b7280;
+
+    font-size: 0.875rem;
+
+    line-height: 1.5rem;
+}
+
+
+/* =========================================================
+   LOGIN SECTION
+========================================================= */
+
+.donor-login-section {
+    margin-top: 1.5rem;
+
+    padding-top: 1.25rem;
+
+    border-top: 1px solid #f3f4f6;
+}
+
+.donor-login-message {
+    margin: 0 0 0.75rem;
+
+    color: #6b7280;
+
+    font-size: 0.875rem;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.donor-login-btn {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.75rem;
+
+    border-radius: 0.75rem;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+
+.donor-login-btn:hover {
+    background: #b91c1c;
+
+    box-shadow:
+        0 10px 20px rgba(220, 38, 38, 0.20);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BACK HOME
+========================================================= */
+
+.donor-back-home-wrapper {
+    margin-top: 1rem;
+}
+
+.donor-back-home {
+    color: #6b7280;
+
+    font-size: 0.875rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+.donor-back-home:hover {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .donor-register-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donor-register-left {
+        min-height: 280px;
+
+        padding: 2rem;
+    }
+
+    .donor-register-right {
+        max-height: none;
+
+        padding: 1.5rem;
+    }
+
+    .donor-register-title {
+        font-size: 2rem;
+
+        line-height: 2.25rem;
+    }
+
+    .donor-register-features {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .donor-register-page {
+        padding: 0.75rem;
+    }
+
+    .donor-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donor-full-field,
+    .donor-submit-wrapper {
+        grid-column: span 1;
+    }
+
+    .donor-register-left {
+        padding: 1.5rem;
+    }
+
+    .donor-register-right {
+        padding: 1.25rem;
+    }
+
+    .donor-login-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .gender-options {
+        gap: 0.75rem;
+    }
+}

@@ -1,0 +1,714 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.main-navbar {
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 999999;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.navbar-logo a {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+}
+
+
+/* Company Logo */
+
+.company-logo {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* Company Name */
+
+.logo-text {
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #b91c1c;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navbar-links {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 28px;
+
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+
+.navbar-links a {
+    text-decoration: none;
+
+    color: #374151;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    padding: 0;
+
+    transition: color 0.2s ease;
+}
+
+
+.navbar-links a:hover {
+    color: #dc2626;
+}
+
+
+/* =========================================
+   ACTIVE LINK
+========================================= */
+
+.navbar-links a.active {
+    color: #374151;
+
+    font-weight: 500;
+}
+
+
+/* Remove underline */
+
+.navbar-links a.active::after {
+    display: none !important;
+
+    content: none !important;
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.navbar-right {
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.navbar-login-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    min-width: 88px;
+
+    height: 44px;
+
+    padding: 0 20px;
+
+    border: 1px solid #dc2626;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #dc2626;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+.navbar-login-btn:hover {
+    background: #dc2626;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   USER DROPDOWN CONTAINER
+========================================= */
+
+.navbar-user-dropdown {
+    position: relative;
+}
+
+
+/* =========================================
+   USER BUTTON
+========================================= */
+
+.navbar-user-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    background: #fff5f5;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 7px 13px;
+
+    border-radius: 10px;
+
+    transition: all 0.2s ease;
+}
+
+
+.navbar-user-button:hover {
+    background: #fee2e2;
+}
+
+
+.navbar-user-button.active {
+    background: #fee2e2;
+}
+
+
+/* =========================================
+   USER ICON
+========================================= */
+
+.navbar-user-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   USER NAME
+========================================= */
+
+.navbar-user-name {
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    max-width: 130px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   DROPDOWN ARROW
+========================================= */
+
+.dropdown-arrow {
+    font-size: 9px;
+
+    color: #6b7280;
+
+    transition: transform 0.2s ease;
+}
+
+
+.navbar-user-button.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   DROPDOWN MENU
+========================================= */
+
+.navbar-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 0;
+
+    width: 270px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.14);
+
+    padding: 8px;
+
+    display: none;
+
+    z-index: 1000000;
+
+    box-sizing: border-box;
+}
+
+
+/* Dropdown visible */
+
+.navbar-dropdown-menu.show {
+    display: block;
+
+    animation: dropdownShow 0.15s ease;
+}
+
+
+/* =========================================
+   DROPDOWN ANIMATION
+========================================= */
+
+@keyframes dropdownShow {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   USER INFORMATION
+========================================= */
+
+.dropdown-user-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 10px;
+}
+
+
+/* =========================================
+   DROPDOWN USER ICON
+========================================= */
+
+.dropdown-user-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   USER DETAILS
+========================================= */
+
+.dropdown-user-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+
+.dropdown-user-details strong {
+    color: #1f2937;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.dropdown-user-details small {
+    color: #6b7280;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================
+   LOGIN STATUS
+========================================= */
+
+.logged-status {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 2px 7px;
+
+    border-radius: 20px;
+
+    background: #ecfdf5;
+
+    color: #16a34a;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.dropdown-divider {
+    height: 1px;
+
+    background: #e5e7eb;
+
+    margin: 6px 2px;
+}
+
+
+/* =========================================
+   DROPDOWN ITEM
+========================================= */
+
+.dropdown-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+.dropdown-item:hover {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+
+/* =========================================
+   DROPDOWN ICON
+========================================= */
+
+.dropdown-icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 7px;
+
+    background: #fee2e2;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   LOGOUT FORM
+========================================= */
+
+.logout-form {
+    margin: 0;
+
+    padding: 0;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.dropdown-logout {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    border-radius: 8px;
+
+    color: #dc2626;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: all 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+.dropdown-logout:hover {
+    background: #fee2e2;
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .main-navbar {
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 12px 4%;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+
+    .navbar-links {
+        order: 3;
+
+        width: 100%;
+
+        margin: 0;
+
+        justify-content: center;
+
+        gap: 20px;
+
+        overflow-x: auto;
+    }
+
+
+    .navbar-links a {
+        padding: 0;
+
+        white-space: nowrap;
+    }
+
+
+    .navbar-links a.active::after {
+        display: none !important;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .main-navbar {
+        padding: 10px 4%;
+    }
+
+
+    .company-logo {
+        width: 36px;
+
+        height: 36px;
+    }
+
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+
+    .navbar-user-name {
+        display: none;
+    }
+
+
+    .navbar-user-button {
+        padding: 4px;
+    }
+
+
+    .navbar-user-icon {
+        width: 38px;
+
+        height: 38px;
+    }
+
+
+    .navbar-links {
+        justify-content: flex-start;
+
+        gap: 18px;
+    }
+
+
+    .navbar-links a {
+        font-size: 14px;
+    }
+
+
+    .navbar-dropdown-menu {
+        width: 250px;
+
+        right: -5px;
+    }
+
+
+    .navbar-login-btn {
+        min-width: 75px;
+
+        height: 40px;
+
+        padding: 0 15px;
+
+        font-size: 14px;
+    }
+
+}

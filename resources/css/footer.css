@@ -1,0 +1,369 @@
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.main-footer {
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #fee2e2;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 0;
+}
+
+
+/* =========================================================
+   FOOTER GRID
+========================================================= */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   FOOTER LOGO
+========================================================= */
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
+
+.footer-logo-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: #dc2626;
+
+    color: #ffffff;
+    font-size: 20px;
+
+    transition: background 0.3s ease;
+}
+
+.footer-logo:hover .footer-logo-icon {
+    background: #b91c1c;
+}
+
+.footer-company-name {
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.footer-company-name span {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.footer-description {
+    max-width: 380px;
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA
+========================================================= */
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f3f4f6;
+    color: #6b7280;
+
+    font-size: 17px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.social-link:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.social-link.facebook:hover {
+    background: #2563eb;
+}
+
+.social-link.instagram:hover {
+    background: #db2777;
+}
+
+.social-link.twitter:hover {
+    background: #111827;
+}
+
+.social-link.youtube:hover {
+    background: #dc2626;
+}
+
+.social-link.linkedin:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   FOOTER HEADINGS
+========================================================= */
+
+.footer-heading {
+    margin: 0 0 16px;
+
+    color: #1f2937;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   QUICK LINKS
+========================================================= */
+
+.footer-links {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    font-size: 14px;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #6b7280;
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #dc2626;
+    padding-left: 4px;
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.contact-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.contact-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 8px;
+
+    background: #fef2f2;
+    color: #dc2626;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   EMERGENCY CALL
+========================================================= */
+
+.emergency-box {
+    padding: 16px;
+
+    border: 1px solid #fee2e2;
+    border-radius: 16px;
+
+    background: #fef2f2;
+}
+
+.emergency-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 50%;
+
+    background: #dc2626;
+    color: #ffffff;
+
+    font-size: 20px;
+}
+
+.emergency-number {
+    margin: 0;
+
+    color: #1f2937;
+
+    font-size: 24px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   BOTTOM FOOTER
+========================================================= */
+
+.footer-bottom {
+    margin-top: 32px;
+    padding-top: 20px;
+
+    border-top: 1px solid #e5e7eb;
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.footer-brand {
+    color: #374151;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .footer-container {
+        width: 90%;
+        padding: 28px 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer-company-name {
+        font-size: 22px;
+    }
+
+    .footer-description {
+        max-width: 100%;
+    }
+
+    .footer-social {
+        gap: 8px;
+    }
+
+    .social-link {
+        width: 38px;
+        height: 38px;
+    }
+
+    .emergency-number {
+        font-size: 20px;
+    }
+
+}

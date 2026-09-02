@@ -19,13 +19,13 @@ class AboutFeatureResource extends Resource
 {
     protected static ?string $model = AboutFeature::class;
 
-   protected static string|BackedEnum|null $navigationIcon = Heroicon::BookOpen;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Sparkles;
 
-protected static string|UnitEnum|null $navigationGroup= 'Frontend Information';
+    protected static string|UnitEnum|null $navigationGroup = 'Frontend Information';
 
-protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 3;
 
-protected static ?string $recordTitleAttribute = 'title';
+    protected static ?string $recordTitleAttribute = 'title';
 
     public static function getGloballySearchableAttributes(): array
     {

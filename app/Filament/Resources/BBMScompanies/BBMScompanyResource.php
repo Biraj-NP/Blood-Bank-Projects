@@ -27,6 +27,8 @@ class BBMScompanyResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+    protected static ?string $navigationLabel = 'Blood Bank Company';
+
     public static function getGloballySearchableAttributes(): array
     {
         return [

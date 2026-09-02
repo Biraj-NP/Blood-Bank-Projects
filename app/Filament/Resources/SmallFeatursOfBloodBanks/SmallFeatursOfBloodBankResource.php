@@ -19,7 +19,7 @@ class SmallFeatursOfBloodBankResource extends Resource
 {
     protected static ?string $model = SmallFeatursOfBloodBank::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::BookOpen;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingLibrary;
 
     protected static string|UnitEnum|null $navigationGroup = 'Frontend Information';
 

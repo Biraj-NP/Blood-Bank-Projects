@@ -19,7 +19,7 @@ class DonorResource extends Resource
 {
     protected static ?string $model = Donor::class;
 
-   protected static string|BackedEnum|null $navigationIcon = Heroicon::Heart;
+   protected static string|BackedEnum|null $navigationIcon = Heroicon::UserGroup;
 
 protected static string|UnitEnum|null $navigationGroup = 'Blood Bank';
 

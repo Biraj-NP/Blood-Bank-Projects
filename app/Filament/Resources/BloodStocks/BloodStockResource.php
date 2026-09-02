@@ -19,7 +19,7 @@ class BloodStockResource extends Resource
 {
     protected static ?string $model = BloodStock::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::Beaker;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::ArchiveBox;
 
     protected static string|UnitEnum|null $navigationGroup = 'Blood Bank';
 

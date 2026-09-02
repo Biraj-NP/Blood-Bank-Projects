@@ -19,7 +19,7 @@ class BloodcampaignResource extends Resource
 {
     protected static ?string $model = Bloodcampaign::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::Home;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Megaphone;
 
      protected static string|UnitEnum|null $navigationGroup = 'Blood Bank';
 
@@ -27,6 +27,8 @@ class BloodcampaignResource extends Resource
 
     // protected static ?string $recordTitleAttribute = 'Bloodcampaign';
     protected static ?string $recordTitleAttribute = 'title';
+
+    protected static ?string $navigationLabel = 'Blood Donation Campaigns';
 
     public static function getGloballySearchableAttributes(): array
     {

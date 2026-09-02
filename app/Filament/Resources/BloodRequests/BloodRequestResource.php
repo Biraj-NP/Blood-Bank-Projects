@@ -19,7 +19,7 @@ class BloodRequestResource extends Resource
 {
     protected static ?string $model = BloodRequest::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::Envelope;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::ClipboardDocumentList;
 
     protected static string|UnitEnum|null $navigationGroup = 'Blood Bank';
 

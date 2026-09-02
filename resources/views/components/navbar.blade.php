@@ -187,7 +187,7 @@
                     >
 
                         <span class="dropdown-icon">
-                            ✉️
+                            <i class="fa-solid fa-phone"></i>
                         </span>
 
                         <span>
@@ -205,7 +205,7 @@
                     >
 
                         <span class="dropdown-icon">
-                            🩸
+                            <i class="fa-solid fa-droplet"></i>
                         </span>
 
                         <span>
@@ -223,7 +223,7 @@
                     >
 
                         <span class="dropdown-icon">
-                            👤
+                            <i class="fa-solid fa-hand-holding-heart"></i>
                         </span>
 
                         <span>
@@ -254,7 +254,7 @@
                         >
 
                             <span class="dropdown-icon">
-                                🚪
+                                <i class="fa-solid fa-right-from-bracket"></i>
                             </span>
 
                             <span>

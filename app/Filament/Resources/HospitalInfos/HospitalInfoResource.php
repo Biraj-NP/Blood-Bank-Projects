@@ -19,13 +19,15 @@ class HospitalInfoResource extends Resource
 {
     protected static ?string $model = HospitalInfo::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::HomeModern;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingOffice2;
 
     protected static string|UnitEnum|null $navigationGroup = 'Blood Bank';
 
     protected static ?int $navigationSort = 3;
 
     protected static ?string $recordTitleAttribute = 'hospital_name';
+
+     protected static ?string $navigationLabel = 'Hospital Information';
 
     public static function getGloballySearchableAttributes(): array
     {

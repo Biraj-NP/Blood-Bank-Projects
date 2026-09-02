@@ -15,11 +15,18 @@ class BloodBankPost extends ChartWidget
 
     protected static ?int $sort = 2;
 
-    // Full width
-    protected int|string|array $columnSpan = 'full';
+    // Half width - Left side
+    protected int|string|array $columnSpan = 1;
 
-    // Y-axis को maximum value store गर्न
+    // Highest chart value
     protected int $chartMaxValue = 1;
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Chart Data
+    |--------------------------------------------------------------------------
+    */
 
     protected function getData(): array
     {
@@ -29,33 +36,60 @@ class BloodBankPost extends ChartWidget
         $requests = [];
         $campaigns = [];
 
+
+        /*
+        |--------------------------------------------------------------------------
+        | Monthly Data
+        |--------------------------------------------------------------------------
+        */
+
         for ($month = 1; $month <= 12; $month++) {
 
             // Contacts
-            $contacts[] = Contact::whereYear('created_at', now()->year)
-                ->whereMonth('created_at', $month)
-                ->count();
+            $contacts[] = Contact::whereYear(
+                'created_at',
+                now()->year
+            )
+            ->whereMonth('created_at', $month)
+            ->count();
+
 
             // Users
-            $users[] = UserLogin::whereYear('created_at', now()->year)
-                ->whereMonth('created_at', $month)
-                ->count();
+            $users[] = UserLogin::whereYear(
+                'created_at',
+                now()->year
+            )
+            ->whereMonth('created_at', $month)
+            ->count();
+
 
             // Blood Donors
-            $donors[] = Donor::whereYear('created_at', now()->year)
-                ->whereMonth('created_at', $month)
-                ->count();
+            $donors[] = Donor::whereYear(
+                'created_at',
+                now()->year
+            )
+            ->whereMonth('created_at', $month)
+            ->count();
+
 
             // Blood Requests
-            $requests[] = BloodRequest::whereYear('created_at', now()->year)
-                ->whereMonth('created_at', $month)
-                ->count();
+            $requests[] = BloodRequest::whereYear(
+                'created_at',
+                now()->year
+            )
+            ->whereMonth('created_at', $month)
+            ->count();
+
 
             // Blood Campaigns
-            $campaigns[] = Bloodcampaign::whereYear('created_at', now()->year)
-                ->whereMonth('created_at', $month)
-                ->count();
+            $campaigns[] = Bloodcampaign::whereYear(
+                'created_at',
+                now()->year
+            )
+            ->whereMonth('created_at', $month)
+            ->count();
         }
+
 
         /*
         |--------------------------------------------------------------------------
@@ -72,7 +106,15 @@ class BloodBankPost extends ChartWidget
             1
         );
 
+
+        /*
+        |--------------------------------------------------------------------------
+        | Return Data
+        |--------------------------------------------------------------------------
+        */
+
         return [
+
             'datasets' => [
 
                 /*
@@ -83,14 +125,18 @@ class BloodBankPost extends ChartWidget
 
                 [
                     'label' => 'Contacts',
+
                     'data' => $contacts,
 
                     'backgroundColor' => '#ef4444',
+
                     'borderColor' => '#dc2626',
+
                     'borderWidth' => 1,
 
                     'borderRadius' => 2,
                 ],
+
 
                 /*
                 |--------------------------------------------------------------------------
@@ -100,14 +146,18 @@ class BloodBankPost extends ChartWidget
 
                 [
                     'label' => 'Users',
+
                     'data' => $users,
 
-                    'backgroundColor' => '#ef4444',
-                    'borderColor' => '#dc2626',
+                    'backgroundColor' => '#3b82f6',
+
+                    'borderColor' => '#2563eb',
+
                     'borderWidth' => 1,
 
                     'borderRadius' => 2,
                 ],
+
 
                 /*
                 |--------------------------------------------------------------------------
@@ -117,14 +167,18 @@ class BloodBankPost extends ChartWidget
 
                 [
                     'label' => 'Blood Donors',
+
                     'data' => $donors,
 
-                    'backgroundColor' => '#ef4444',
-                    'borderColor' => '#dc2626',
+                    'backgroundColor' => '#22c55e',
+
+                    'borderColor' => '#16a34a',
+
                     'borderWidth' => 1,
 
                     'borderRadius' => 2,
                 ],
+
 
                 /*
                 |--------------------------------------------------------------------------
@@ -134,14 +188,18 @@ class BloodBankPost extends ChartWidget
 
                 [
                     'label' => 'Blood Requests',
+
                     'data' => $requests,
 
-                    'backgroundColor' => '#ef4444',
-                    'borderColor' => '#dc2626',
+                    'backgroundColor' => '#f59e0b',
+
+                    'borderColor' => '#d97706',
+
                     'borderWidth' => 1,
 
                     'borderRadius' => 2,
                 ],
+
 
                 /*
                 |--------------------------------------------------------------------------
@@ -151,15 +209,19 @@ class BloodBankPost extends ChartWidget
 
                 [
                     'label' => 'Blood Campaigns',
+
                     'data' => $campaigns,
 
-                    'backgroundColor' => '#ef4444',
-                    'borderColor' => '#dc2626',
+                    'backgroundColor' => '#8b5cf6',
+
+                    'borderColor' => '#7c3aed',
+
                     'borderWidth' => 1,
 
                     'borderRadius' => 2,
                 ],
             ],
+
 
             /*
             |--------------------------------------------------------------------------
@@ -168,6 +230,7 @@ class BloodBankPost extends ChartWidget
             */
 
             'labels' => [
+
                 'Jan',
                 'Feb',
                 'Mar',
@@ -180,36 +243,43 @@ class BloodBankPost extends ChartWidget
                 'Oct',
                 'Nov',
                 'Dec',
+
             ],
         ];
     }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Chart Type
+    |--------------------------------------------------------------------------
+    */
 
     protected function getType(): string
     {
         return 'bar';
     }
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Chart Options
+    |--------------------------------------------------------------------------
+    */
+
     protected function getOptions(): array
     {
-        /*
-        |--------------------------------------------------------------------------
-        | Dynamic Y-Axis Maximum
-        |--------------------------------------------------------------------------
-        |
-        | यदि highest value 1 छ  => max 2
-        | यदि highest value 5 छ  => max 6
-        | यदि highest value 8 छ  => max 9
-        | यदि highest value 10 छ => max 11
-        |
-        */
+        $yAxisMax = max(
+            2,
+            $this->chartMaxValue + 1
+        );
 
-        $yAxisMax = max(2, $this->chartMaxValue + 1);
 
         return [
 
             /*
             |--------------------------------------------------------------------------
-            | Chart
+            | Responsive
             |--------------------------------------------------------------------------
             */
 
@@ -225,40 +295,42 @@ class BloodBankPost extends ChartWidget
             */
 
             'layout' => [
+
                 'padding' => [
+
                     'top' => 0,
+
                     'bottom' => 0,
+
                     'left' => 0,
+
                     'right' => 0,
+
                 ],
+
             ],
 
 
             /*
             |--------------------------------------------------------------------------
-            | BAR SIZE
+            | Bar Size
             |--------------------------------------------------------------------------
-            |
-            | यी setting ले bar लाई मोटा बनाउँछ
-            | र bar हरूबीचको gap धेरै कम गर्छ।
-            |
             */
 
             'datasets' => [
+
                 'bar' => [
 
-                    // Month बीचको gap धेरै कम
                     'categoryPercentage' => 0.95,
 
-                    // एउटै month का bars लगभग जोडिएको
                     'barPercentage' => 0.98,
 
-                    // Thick bar
-                    'maxBarThickness' => 45,
+                    'maxBarThickness' => 35,
 
-                    // हल्का rounded corner
                     'borderRadius' => 2,
+
                 ],
+
             ],
 
 
@@ -277,21 +349,27 @@ class BloodBankPost extends ChartWidget
                 */
 
                 'legend' => [
+
                     'display' => true,
 
                     'position' => 'bottom',
 
                     'labels' => [
+
                         'boxWidth' => 10,
+
                         'boxHeight' => 10,
 
-                        // Legend को unnecessary gap कम
-                        'padding' => 8,
+                        'padding' => 6,
 
                         'font' => [
-                            'size' => 10,
+
+                            'size' => 9,
+
                         ],
+
                     ],
+
                 ],
 
 
@@ -302,12 +380,15 @@ class BloodBankPost extends ChartWidget
                 */
 
                 'tooltip' => [
+
                     'enabled' => true,
 
                     'mode' => 'index',
 
                     'intersect' => false,
+
                 ],
+
             ],
 
 
@@ -327,20 +408,26 @@ class BloodBankPost extends ChartWidget
 
                 'x' => [
 
-                    // Month को सुरु/अन्त्यमा extra gap नहोस्
                     'offset' => false,
 
                     'grid' => [
+
                         'display' => false,
+
                     ],
 
                     'ticks' => [
+
                         'padding' => 2,
 
                         'font' => [
-                            'size' => 10,
+
+                            'size' => 9,
+
                         ],
+
                     ],
+
                 ],
 
 
@@ -352,25 +439,24 @@ class BloodBankPost extends ChartWidget
 
                 'y' => [
 
-                    // 0 बाट सुरु
                     'beginAtZero' => true,
 
-                    // Dynamic maximum
                     'max' => $yAxisMax,
 
                     'ticks' => [
 
-                        // 1, 2, 3, 4... integer मात्र
                         'precision' => 0,
 
-                        // प्रत्येक 1 value मा tick
                         'stepSize' => 1,
 
                         'padding' => 2,
 
                         'font' => [
-                            'size' => 10,
+
+                            'size' => 9,
+
                         ],
+
                     ],
 
                     'grid' => [
@@ -380,9 +466,13 @@ class BloodBankPost extends ChartWidget
                         'drawBorder' => false,
 
                         'lineWidth' => 1,
+
                     ],
+
                 ],
+
             ],
+
         ];
     }
 

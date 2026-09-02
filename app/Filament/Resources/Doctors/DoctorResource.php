@@ -19,7 +19,7 @@ class DoctorResource extends Resource
 {
     protected static ?string $model = Doctor::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::User;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::UserCircle;
 
     protected static string|UnitEnum|null $navigationGroup = 'Blood Bank';
 

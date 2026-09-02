@@ -6,7 +6,6 @@ use App\Models\Bloodcampaign;
 use App\Models\BloodRequest;
 use App\Models\Contact;
 use App\Models\Donor;
-use App\Models\UserLogin;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
@@ -16,10 +15,13 @@ class StatsWidget extends StatsOverviewWidget
 
     protected function getStats(): array
     {
-        // Today's data
-        $todayContacts = Contact::whereDate('created_at', today())->count();
+        /*
+        |--------------------------------------------------------------------------
+        | Today's Data
+        |--------------------------------------------------------------------------
+        */
 
-        $todayUsers = UserLogin::whereDate('created_at', today())->count();
+        $todayContacts = Contact::whereDate('created_at', today())->count();
 
         $todayDonors = Donor::whereDate('created_at', today())->count();
 
@@ -27,42 +29,109 @@ class StatsWidget extends StatsOverviewWidget
 
         $todayCampaigns = Bloodcampaign::whereDate('created_at', today())->count();
 
+
+        /*
+        |--------------------------------------------------------------------------
+        | Last 7 Days Data
+        |--------------------------------------------------------------------------
+        */
+
+        $contactChart = [];
+        $donorChart = [];
+        $requestChart = [];
+        $campaignChart = [];
+
+        for ($i = 6; $i >= 0; $i--) {
+
+            $date = now()->subDays($i)->toDateString();
+
+            // Contacts
+            $contactChart[] = Contact::whereDate('created_at', $date)->count();
+
+            // Donors
+            $donorChart[] = Donor::whereDate('created_at', $date)->count();
+
+            // Blood Requests
+            $requestChart[] = BloodRequest::whereDate('created_at', $date)->count();
+
+            // Campaigns
+            $campaignChart[] = Bloodcampaign::whereDate('created_at', $date)->count();
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Stats Cards
+        |--------------------------------------------------------------------------
+        */
+
         return [
 
             // Contacts
-            Stat::make('Contacts', Contact::count())
-                ->description($todayContacts . ' received today')
+            Stat::make('Contacts', Contact::count())->description($todayContacts . ' received today')->descriptionIcon('heroicon-m-chat-bubble-left-right')
                 ->color('danger')
-                ->url(route('filament.admin.resources.contacts.index'))
-                ->descriptionIcon('heroicon-m-chat-bubble-left-right'),
+                ->chart($contactChart)
+                ->url(route('filament.admin.resources.contacts.index')),
 
-            // // Users
-            // Stat::make('Users', UserLogin::count())
-            //     ->description($todayUsers . ' registered today')
-            //     ->color('danger')
-            //     ->url(route('filament.admin.resources.user-logins.index'))
-            //     ->descriptionIcon('heroicon-m-users'),
 
             // Campaigns
-            Stat::make('Campaigns', Bloodcampaign::count())
-                ->description($todayCampaigns . ' created today')
+            Stat::make(
+                'Campaigns',
+                Bloodcampaign::count()
+            )
+                ->description(
+                    $todayCampaigns . ' created today'
+                )
+                ->descriptionIcon(
+                    'heroicon-m-calendar-days'
+                )
                 ->color('danger')
-                ->url(route('filament.admin.resources.bloodcampaigns.index'))
-                ->descriptionIcon('heroicon-m-calendar-days'),
+                ->chart($campaignChart)
+                ->url(
+                    route(
+                        'filament.admin.resources.bloodcampaigns.index'
+                    )
+                ),
+
 
             // Blood Donors
-            Stat::make('Donors', Donor::count())
-                ->description($todayDonors . ' registered today')
+            Stat::make(
+                'Donors',
+                Donor::count()
+            )
+                ->description(
+                    $todayDonors . ' registered today'
+                )
+                ->descriptionIcon(
+                    'heroicon-m-heart'
+                )
                 ->color('danger')
-                ->url(route('filament.admin.resources.donors.index'))
-                ->descriptionIcon('heroicon-m-heart'),
+                ->chart($donorChart)
+                ->url(
+                    route(
+                        'filament.admin.resources.donors.index'
+                    )
+                ),
+
 
             // Blood Requests
-            Stat::make('Blood Requests', BloodRequest::count())
-                ->description($todayRequests . ' requested today')
+            Stat::make(
+                'Blood Requests',
+                BloodRequest::count()
+            )
+                ->description(
+                    $todayRequests . ' requested today'
+                )
+                ->descriptionIcon(
+                    'heroicon-m-clipboard-document-check'
+                )
                 ->color('danger')
-                ->url(route('filament.admin.resources.blood-requests.index'))
-                ->descriptionIcon('heroicon-m-clipboard-document-check'),
+                ->chart($requestChart)
+                ->url(
+                    route(
+                        'filament.admin.resources.blood-requests.index'
+                    )
+                ),
         ];
     }
 }

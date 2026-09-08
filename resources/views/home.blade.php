@@ -1,4 +1,14 @@
 <x-layout>
+    @if(session('success')) <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if(session('error')) <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
+
 
     {{-- Hero Section --}}
     <section class="home-hero">
@@ -134,239 +144,237 @@
     </section>
 
 
-  {{-- =========================================================
+    {{-- =========================================================
      BLOOD DONATION ELIGIBILITY SECTION
 ========================================================= --}}
 
-<section class="donation-eligibility-section">
+    <section class="donation-eligibility-section">
 
-    {{-- Background Decorations --}}
-    <div class="eligibility-decoration eligibility-decoration-top"></div>
-    <div class="eligibility-decoration eligibility-decoration-bottom"></div>
-
-
-    <div class="donation-eligibility-container">
-
-        {{-- Section Header --}}
-        <div class="eligibility-header">
-
-            <span class="eligibility-badge">
-                🩸 Blood Donation
-            </span>
-
-            <h2>
-                Check if you're eligible to donate blood
-            </h2>
-
-            <p>
-                Enter the date of your last blood donation to check
-                whether you have completed the required 6-month
-                waiting period.
-            </p>
-
-        </div>
+        {{-- Background Decorations --}}
+        <div class="eligibility-decoration eligibility-decoration-top"></div>
+        <div class="eligibility-decoration eligibility-decoration-bottom"></div>
 
 
-        {{-- Eligibility Main Card --}}
-        <div class="donation-eligibility-box">
+        <div class="donation-eligibility-container">
 
-            {{-- Card Icon --}}
-            <div class="eligibility-main-icon">
-                🩸
-            </div>
+            {{-- Section Header --}}
+            <div class="eligibility-header">
 
-
-            <h3>
-                Donation Eligibility Check
-            </h3>
-
-            <p class="eligibility-card-description">
-                Please provide your last blood donation date.
-                If you have not donated blood before, you can
-                directly proceed to donation registration.
-            </p>
-
-
-            {{-- Date Input --}}
-            <div class="eligibility-form-group">
-
-                <label for="lastDonation">
-
-                    Last Donation Date
-
-                    <span>*</span>
-
-                </label>
-
-                <input
-                    type="date"
-                    id="lastDonation"
-                    class="eligibility-date-input"
-                    max="{{ date('Y-m-d') }}"
-                >
-
-                <small>
-                    The date must not be in the future.
-                </small>
-
-            </div>
-
-
-            {{-- Check Button --}}
-            <button
-                type="button"
-                onclick="checkDonationEligibility()"
-                class="eligibility-check-btn">
-
-                <span>
-                    Check Eligibility
+                <span class="eligibility-badge">
+                    🩸 Blood Donation
                 </span>
 
-                <span class="eligibility-arrow">
-                    →
-                </span>
+                <h2>
+                    Check if you're eligible to donate blood
+                </h2>
 
-            </button>
+                <p>
+                    Enter the date of your last blood donation to check
+                    whether you have completed the required 6-month
+                    waiting period.
+                </p>
 
-
-            {{-- Result --}}
-            <div
-                id="donationResult"
-                class="donation-result">
             </div>
 
-        </div>
 
+            {{-- Eligibility Main Card --}}
+            <div class="donation-eligibility-box">
 
-        {{-- Information Cards --}}
-        <div class="donation-eligibility-info">
-
-
-            {{-- Card 1 --}}
-            <div class="donation-info-item">
-
-                <div class="donation-info-item-icon">
+                {{-- Card Icon --}}
+                <div class="eligibility-main-icon">
                     🩸
                 </div>
 
+
                 <h3>
-                    6 Month Waiting Period
+                    Donation Eligibility Check
                 </h3>
 
-                <p>
-                    The system checks whether 6 months have
-                    passed since your previous donation.
+                <p class="eligibility-card-description">
+                    Please provide your last blood donation date.
+                    If you have not donated blood before, you can
+                    directly proceed to donation registration.
                 </p>
+
+
+                {{-- Date Input --}}
+                <div class="eligibility-form-group">
+
+                    <label for="lastDonation">
+
+                        Last Donation Date
+
+                        <span>*</span>
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="lastDonation"
+                        class="eligibility-date-input"
+                        max="{{ date('Y-m-d') }}">
+
+                    <small>
+                        The date must not be in the future.
+                    </small>
+
+                </div>
+
+
+                {{-- Check Button --}}
+                <button
+                    type="button"
+                    onclick="checkDonationEligibility()"
+                    class="eligibility-check-btn">
+
+                    <span>
+                        Check Eligibility
+                    </span>
+
+                    <span class="eligibility-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                {{-- Result --}}
+                <div
+                    id="donationResult"
+                    class="donation-result">
+                </div>
 
             </div>
 
 
-            {{-- Card 2 --}}
-            <div class="donation-info-item">
+            {{-- Information Cards --}}
+            <div class="donation-eligibility-info">
 
-                <div class="donation-info-item-icon">
-                    ✓
+
+                {{-- Card 1 --}}
+                <div class="donation-info-item">
+
+                    <div class="donation-info-item-icon">
+                        🩸
+                    </div>
+
+                    <h3>
+                        6 Month Waiting Period
+                    </h3>
+
+                    <p>
+                        The system checks whether 6 months have
+                        passed since your previous donation.
+                    </p>
+
                 </div>
 
-                <h3>
-                    Quick Eligibility Check
-                </h3>
 
-                <p>
-                    Get an instant result based on your
-                    last donation date.
-                </p>
+                {{-- Card 2 --}}
+                <div class="donation-info-item">
+
+                    <div class="donation-info-item-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Quick Eligibility Check
+                    </h3>
+
+                    <p>
+                        Get an instant result based on your
+                        last donation date.
+                    </p>
+
+                </div>
+
+
+                {{-- Card 3 --}}
+                <div class="donation-info-item">
+
+                    <div class="donation-info-item-icon">
+                        ❤️
+                    </div>
+
+                    <h3>
+                        Every Donation Matters
+                    </h3>
+
+                    <p>
+                        Your eligible blood donation can help
+                        save lives in your community.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            {{-- Card 3 --}}
-            <div class="donation-info-item">
+            {{-- Important Notice --}}
+            <div class="eligibility-notice">
 
-                <div class="donation-info-item-icon">
-                    ❤️
+                <div class="eligibility-notice-icon">
+                    <i class="fa-solid fa-circle-info"></i>
                 </div>
 
-                <h3>
-                    Every Donation Matters
-                </h3>
+                <div>
 
-                <p>
-                    Your eligible blood donation can help
-                    save lives in your community.
-                </p>
+                    <strong>
+                        Important Notice
+                    </strong>
+
+                    <p>
+                        This online check is only a preliminary
+                        eligibility check. Final blood donation
+                        eligibility will be determined by qualified
+                        medical staff at the donation campaign.
+                    </p>
+
+                </div>
 
             </div>
 
         </div>
 
-
-        {{-- Important Notice --}}
-        <div class="eligibility-notice">
-
-            <div class="eligibility-notice-icon">
-                <i class="fa-solid fa-circle-info"></i>
-            </div>
-
-            <div>
-
-                <strong>
-                    Important Notice
-                </strong>
-
-                <p>
-                    This online check is only a preliminary
-                    eligibility check. Final blood donation
-                    eligibility will be determined by qualified
-                    medical staff at the donation campaign.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
 
-{{-- =========================================================
+    {{-- =========================================================
      ELIGIBILITY JAVASCRIPT
 ========================================================= --}}
 
-<script>
+    <script>
+        function checkDonationEligibility() {
 
-function checkDonationEligibility() {
+            const lastDonationInput =
+                document.getElementById('lastDonation');
 
-    const lastDonationInput =
-        document.getElementById('lastDonation');
-
-    const result =
-        document.getElementById('donationResult');
-
-
-    /*
-    ---------------------------------------------------------
-    Reset previous result
-    ---------------------------------------------------------
-    */
-
-    result.className = 'donation-result';
-    result.innerHTML = '';
+            const result =
+                document.getElementById('donationResult');
 
 
-    /*
-    ---------------------------------------------------------
-    Check if date is selected
-    ---------------------------------------------------------
-    */
+            /*
+            ---------------------------------------------------------
+            Reset previous result
+            ---------------------------------------------------------
+            */
 
-    if (!lastDonationInput.value) {
+            result.className = 'donation-result';
+            result.innerHTML = '';
 
-        result.className =
-            'donation-result not-eligible';
 
-        result.innerHTML = `
+            /*
+            ---------------------------------------------------------
+            Check if date is selected
+            ---------------------------------------------------------
+            */
+
+            if (!lastDonationInput.value) {
+
+                result.className =
+                    'donation-result not-eligible';
+
+                result.innerHTML = `
 
             <div class="result-content">
 
@@ -391,43 +399,43 @@ function checkDonationEligibility() {
 
         `;
 
-        return;
-    }
+                return;
+            }
 
 
-    /*
-    ---------------------------------------------------------
-    Convert selected date
-    ---------------------------------------------------------
-    */
+            /*
+            ---------------------------------------------------------
+            Convert selected date
+            ---------------------------------------------------------
+            */
 
-    const lastDonation =
-        new Date(lastDonationInput.value + 'T00:00:00');
-
-
-    /*
-    ---------------------------------------------------------
-    Today's date
-    ---------------------------------------------------------
-    */
-
-    const today = new Date();
-
-    today.setHours(0, 0, 0, 0);
+            const lastDonation =
+                new Date(lastDonationInput.value + 'T00:00:00');
 
 
-    /*
-    ---------------------------------------------------------
-    Check future date
-    ---------------------------------------------------------
-    */
+            /*
+            ---------------------------------------------------------
+            Today's date
+            ---------------------------------------------------------
+            */
 
-    if (lastDonation > today) {
+            const today = new Date();
 
-        result.className =
-            'donation-result not-eligible';
+            today.setHours(0, 0, 0, 0);
 
-        result.innerHTML = `
+
+            /*
+            ---------------------------------------------------------
+            Check future date
+            ---------------------------------------------------------
+            */
+
+            if (lastDonation > today) {
+
+                result.className =
+                    'donation-result not-eligible';
+
+                result.innerHTML = `
 
             <div class="result-content">
 
@@ -452,42 +460,42 @@ function checkDonationEligibility() {
 
         `;
 
-        return;
-    }
+                return;
+            }
 
 
-    /*
-    ---------------------------------------------------------
-    Calculate 6 months from last donation
-    ---------------------------------------------------------
-    */
+            /*
+            ---------------------------------------------------------
+            Calculate 6 months from last donation
+            ---------------------------------------------------------
+            */
 
-    const sixMonthsLater =
-        new Date(lastDonation);
+            const sixMonthsLater =
+                new Date(lastDonation);
 
-    sixMonthsLater.setMonth(
-        sixMonthsLater.getMonth() + 6
-    );
+            sixMonthsLater.setMonth(
+                sixMonthsLater.getMonth() + 6
+            );
 
 
-    /*
-    ---------------------------------------------------------
-    Check eligibility
-    ---------------------------------------------------------
-    */
+            /*
+            ---------------------------------------------------------
+            Check eligibility
+            ---------------------------------------------------------
+            */
 
-    if (today >= sixMonthsLater) {
+            if (today >= sixMonthsLater) {
 
-        /*
-        -----------------------------------------------------
-        ELIGIBLE
-        -----------------------------------------------------
-        */
+                /*
+                -----------------------------------------------------
+                ELIGIBLE
+                -----------------------------------------------------
+                */
 
-        result.className =
-            'donation-result eligible';
+                result.className =
+                    'donation-result eligible';
 
-        result.innerHTML = `
+                result.innerHTML = `
 
             <div class="result-content">
 
@@ -519,30 +527,28 @@ function checkDonationEligibility() {
 
         `;
 
-    }
+            } else {
 
-    else {
+                /*
+                -----------------------------------------------------
+                NOT ELIGIBLE
+                -----------------------------------------------------
+                */
 
-        /*
-        -----------------------------------------------------
-        NOT ELIGIBLE
-        -----------------------------------------------------
-        */
+                result.className =
+                    'donation-result not-eligible';
 
-        result.className =
-            'donation-result not-eligible';
+                const remainingTime =
+                    sixMonthsLater - today;
 
-        const remainingTime =
-            sixMonthsLater - today;
-
-        const remainingDays =
-            Math.ceil(
-                remainingTime /
-                (1000 * 60 * 60 * 24)
-            );
+                const remainingDays =
+                    Math.ceil(
+                        remainingTime /
+                        (1000 * 60 * 60 * 24)
+                    );
 
 
-        result.innerHTML = `
+                result.innerHTML = `
 
             <div class="result-content">
 
@@ -575,11 +581,10 @@ function checkDonationEligibility() {
 
         `;
 
-    }
+            }
 
-}
-
-</script>
+        }
+    </script>
 
 
 

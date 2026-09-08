@@ -28,7 +28,9 @@ class PageController extends BaseController
     // About Page
     function aboutPage()
     {
+
         $about = About::first();
+
         $aboutFeatures = AboutFeature::all();
         $SmallFeatursOfBloodBank = SmallFeatursOfBloodBank::all();
         return view('about', compact('about', 'aboutFeatures', 'SmallFeatursOfBloodBank'));
@@ -82,7 +84,7 @@ class PageController extends BaseController
         $contact->email = $request->email;
         $contact->subject = $request->subject;
         $contact->message = $request->message;
-       
+
 
         $contact->save();
 

@@ -61,7 +61,6 @@ Route::middleware('guest')->group(function () {
 
     Route::post('/register', [AuthController::class, 'store'])
         ->name('register.store');
-
 });
 
 
@@ -109,12 +108,15 @@ Route::middleware('auth')->group(function () {
     |--------------------------------------------------------------------------
     */
 
-    // Donor Registration Page
-  Route::get('/doner_register', [DonorController::class, 'donorPage'])
-    ->name('doner_register');
+    Route::get('/doner_register', [
+        DonorController::class,
+        'donorPage'
+    ])->name('doner_register');
 
-Route::post('/donor-register', [DonorController::class, 'donorSave'])
-    ->name('donor.register.save');
+    Route::post('/donor-register', [
+        DonorController::class,
+        'donorSave'
+    ])->name('donor.register.save');
 
 
     /*
@@ -123,9 +125,15 @@ Route::post('/donor-register', [DonorController::class, 'donorSave'])
     |--------------------------------------------------------------------------
     */
 
-    Route::post('/logout', [
+    // Normal logout
+    Route::get('/logout', [
         AuthController::class,
         'logout'
     ])->name('logout');
 
+    // POST logout पनि support गर्ने
+    Route::post('/logout', [
+        AuthController::class,
+        'logout'
+    ])->name('logout.post');
 });

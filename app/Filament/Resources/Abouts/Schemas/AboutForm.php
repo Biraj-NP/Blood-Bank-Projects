@@ -23,22 +23,22 @@ class AboutForm
                         $set('slug', Str::slug($state ?? ''))
                     )
                     ->required()
-                    ->searchable()
+                 //   ->searchable()
                     ->columnSpanFull(),
 
                 TextInput::make('slug')
                     ->required()
-                    ->searchable()
+                  //  ->searchable()
                     ->columnSpanFull(),
 
                 TextInput::make('hero_heading')
                     ->required()
-                    ->searchable()
+                   // ->searchable()
                     ->columnSpanFull(),
 
                 Textarea::make('short_description')
                     ->required()
-                    ->searchable()
+                    //->searchable()
                     ->columnSpanFull(),
 
             ]);

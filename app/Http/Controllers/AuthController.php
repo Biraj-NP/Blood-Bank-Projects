@@ -61,13 +61,11 @@ class AuthController extends Controller
             ],
         ]);
 
-
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
 
         return redirect()
             ->route('login')
@@ -97,31 +95,15 @@ class AuthController extends Controller
             ],
         ]);
 
-
-        /*
-        |--------------------------------------------------------------------------
-        | CHECK EMAIL + PASSWORD
-        |--------------------------------------------------------------------------
-        */
-
         if (Auth::attempt($credentials)) {
 
             /*
+            |--------------------------------------------------------------------------
             | Security
+            |--------------------------------------------------------------------------
             */
 
             $request->session()->regenerate();
-
-
-            /*
-            |--------------------------------------------------------------------------
-            | IMPORTANT
-            |--------------------------------------------------------------------------
-            |
-            | Login गरेपछि Donor Dashboard मा जाँदैन।
-            | Home page मा जान्छ।
-            |
-            */
 
             return redirect()
                 ->route('home')
@@ -130,13 +112,6 @@ class AuthController extends Controller
                     'Login successful. Welcome!'
                 );
         }
-
-
-        /*
-        |--------------------------------------------------------------------------
-        | LOGIN FAILED
-        |--------------------------------------------------------------------------
-        */
 
         return back()
             ->withErrors([
@@ -158,11 +133,27 @@ class AuthController extends Controller
     {
         Auth::logout();
 
+        /*
+        |--------------------------------------------------------------------------
+        | Destroy Current Session
+        |--------------------------------------------------------------------------
+        */
 
         $request->session()->invalidate();
 
+        /*
+        |--------------------------------------------------------------------------
+        | Generate New CSRF Token
+        |--------------------------------------------------------------------------
+        */
+
         $request->session()->regenerateToken();
 
+        /*
+        |--------------------------------------------------------------------------
+        | Redirect To Login
+        |--------------------------------------------------------------------------
+        */
 
         return redirect()
             ->route('login')
@@ -172,3 +163,4 @@ class AuthController extends Controller
             );
     }
 }
+

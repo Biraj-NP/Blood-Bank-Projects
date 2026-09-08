@@ -26,6 +26,7 @@ class BloodRequestController extends Controller
             return view('blood_request');
         }
 
+
         /*
         |--------------------------------------------------------------------------
         | Get Logged In User
@@ -33,6 +34,7 @@ class BloodRequestController extends Controller
         */
 
         $user = Auth::user();
+
 
         /*
         |--------------------------------------------------------------------------
@@ -70,6 +72,7 @@ class BloodRequestController extends Controller
                 );
         }
 
+
         /*
         |--------------------------------------------------------------------------
         | Get Logged In User
@@ -77,6 +80,7 @@ class BloodRequestController extends Controller
         */
 
         $user = Auth::user();
+
 
         /*
         |--------------------------------------------------------------------------
@@ -176,8 +180,11 @@ class BloodRequestController extends Controller
 
         /*
         |--------------------------------------------------------------------------
-        | Create Blood Request
+        | Create New Blood Request
         |--------------------------------------------------------------------------
+        |
+        | Every form submission creates a NEW record.
+        |
         */
 
         $bloodRequest = new BloodRequest();
@@ -198,11 +205,10 @@ class BloodRequestController extends Controller
 
         /*
         |--------------------------------------------------------------------------
-        | Login User Password
+        | User Password
         |--------------------------------------------------------------------------
         |
-        | users table मा भएको already hashed password
-        | नै blood_requests table मा राखिन्छ।
+        | Store the already hashed password from users table.
         |
         */
 
@@ -234,7 +240,7 @@ class BloodRequestController extends Controller
 
         /*
         |--------------------------------------------------------------------------
-        | Save Blood Request
+        | Save New Blood Request
         |--------------------------------------------------------------------------
         */
 
@@ -243,7 +249,7 @@ class BloodRequestController extends Controller
 
         /*
         |--------------------------------------------------------------------------
-        | Redirect Home
+        | Success Message
         |--------------------------------------------------------------------------
         */
 
@@ -255,3 +261,4 @@ class BloodRequestController extends Controller
             );
     }
 }
+

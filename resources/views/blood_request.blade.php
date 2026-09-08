@@ -8,8 +8,10 @@
 
                 <div class="blood-request-grid">
 
+                    {{-- =====================================================
+                         LEFT SIDE
+                    ====================================================== --}}
 
-                    {{-- LEFT SIDE --}}
                     <div class="blood-request-left">
 
                         <div>
@@ -49,45 +51,92 @@
                     </div>
 
 
-                    {{-- RIGHT SIDE --}}
+                    {{-- =====================================================
+                         RIGHT SIDE
+                    ====================================================== --}}
+
                     <div class="blood-request-right">
 
 
-                        {{-- SUCCESS MESSAGE --}}
+                        {{-- =================================================
+                             SESSION SUCCESS MESSAGE
+                        ================================================== --}}
+
                         @if(session('success'))
 
-                            <div class="request-success-message">
+                            <div class="alert alert-success">
 
-                                {{ session('success') }}
+                                <span class="alert-icon">
+                                    ✓
+                                </span>
+
+                                <span class="alert-message">
+                                    {{ session('success') }}
+                                </span>
 
                             </div>
 
                         @endif
 
 
-                        {{-- ERROR MESSAGE --}}
+                        {{-- =================================================
+                             SESSION ERROR MESSAGE
+                        ================================================== --}}
+
+                        @if(session('error'))
+
+                            <div class="alert alert-danger">
+
+                                <span class="alert-icon">
+                                    !
+                                </span>
+
+                                <span class="alert-message">
+                                    {{ session('error') }}
+                                </span>
+
+                            </div>
+
+                        @endif
+
+
+                        {{-- =================================================
+                             VALIDATION ERRORS
+                        ================================================== --}}
+
                         @if($errors->any())
 
-                            <div class="request-error-message">
+                            <div class="alert alert-danger">
 
-                                <ul>
+                                <span class="alert-icon">
+                                    !
+                                </span>
 
-                                    @foreach($errors->all() as $error)
+                                <div class="alert-message">
 
-                                        <li>
-                                            • {{ $error }}
-                                        </li>
+                                    <ul class="alert-error-list">
 
-                                    @endforeach
+                                        @foreach($errors->all() as $error)
 
-                                </ul>
+                                            <li>
+                                                {{ $error }}
+                                            </li>
+
+                                        @endforeach
+
+                                    </ul>
+
+                                </div>
 
                             </div>
 
                         @endif
 
 
-                        {{-- FORM --}}
+                        {{-- =================================================
+                             BLOOD REQUEST FORM
+                        ================================================== --}}
+
                         <form
                             action="{{ route('blood_request_save') }}"
                             method="POST"
@@ -99,7 +148,10 @@
                             <div class="request-form-grid">
 
 
-                                {{-- FIRST NAME --}}
+                                {{-- =================================================
+                                     FIRST NAME
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label class="request-label">
@@ -116,7 +168,10 @@
                                 </div>
 
 
-                                {{-- LAST NAME --}}
+                                {{-- =================================================
+                                     LAST NAME
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label class="request-label">
@@ -133,7 +188,10 @@
                                 </div>
 
 
-                                {{-- EMAIL --}}
+                                {{-- =================================================
+                                     EMAIL
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label class="request-label">
@@ -150,7 +208,10 @@
                                 </div>
 
 
-                                {{-- PHONE --}}
+                                {{-- =================================================
+                                     PHONE
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label
@@ -174,7 +235,10 @@
                                 </div>
 
 
-                                {{-- DOB --}}
+                                {{-- =================================================
+                                     DATE OF BIRTH
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label
@@ -197,7 +261,10 @@
                                 </div>
 
 
-                                {{-- GENDER --}}
+                                {{-- =================================================
+                                     GENDER
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label class="request-label">
@@ -217,7 +284,9 @@
                                                 required
                                             >
 
-                                            <span>Male</span>
+                                            <span>
+                                                Male
+                                            </span>
 
                                         </label>
 
@@ -231,7 +300,9 @@
                                                 {{ old('gender') == 'Female' ? 'checked' : '' }}
                                             >
 
-                                            <span>Female</span>
+                                            <span>
+                                                Female
+                                            </span>
 
                                         </label>
 
@@ -245,7 +316,9 @@
                                                 {{ old('gender') == 'Other' ? 'checked' : '' }}
                                             >
 
-                                            <span>Other</span>
+                                            <span>
+                                                Other
+                                            </span>
 
                                         </label>
 
@@ -254,7 +327,10 @@
                                 </div>
 
 
-                                {{-- BLOOD GROUP --}}
+                                {{-- =================================================
+                                     BLOOD GROUP
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label
@@ -305,7 +381,10 @@
                                 </div>
 
 
-                                {{-- PROVINCE --}}
+                                {{-- =================================================
+                                     PROVINCE
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label
@@ -355,7 +434,10 @@
                                 </div>
 
 
-                                {{-- DISTRICT --}}
+                                {{-- =================================================
+                                     DISTRICT
+                                ================================================== --}}
+
                                 <div class="request-field">
 
                                     <label
@@ -379,7 +461,10 @@
                                 </div>
 
 
-                                {{-- ADDRESS --}}
+                                {{-- =================================================
+                                     ADDRESS
+                                ================================================== --}}
+
                                 <div class="request-full-field">
 
                                     <label
@@ -401,7 +486,10 @@
                                 </div>
 
 
-                                {{-- CAUSE --}}
+                                {{-- =================================================
+                                     CAUSE
+                                ================================================== --}}
+
                                 <div class="request-full-field">
 
                                     <label
@@ -423,7 +511,10 @@
                                 </div>
 
 
-                                {{-- SUBMIT --}}
+                                {{-- =================================================
+                                     SUBMIT BUTTON
+                                ================================================== --}}
+
                                 <div class="request-submit-wrapper">
 
                                     <button
@@ -438,7 +529,10 @@
                             </div>
 
 
-                            {{-- DONOR REGISTRATION --}}
+                            {{-- =================================================
+                                 DONOR REGISTRATION
+                            ================================================== --}}
+
                             <div class="donor-registration">
 
                                 <div class="donor-registration-content">
@@ -471,8 +565,9 @@
 
     @else
 
-
-        {{-- NOT LOGGED IN --}}
+        {{-- =============================================================
+             NOT LOGGED IN
+        ============================================================== --}}
 
         <div class="blood-request-login-page">
 
@@ -493,11 +588,9 @@
 
 
                 <p class="login-request-description">
-
                     Need blood for yourself or someone else?
                     Please login to your account first
                     to continue with blood request.
-
                 </p>
 
 
@@ -505,10 +598,8 @@
 
 
                 <p class="login-request-message">
-
                     You need to login before submitting
                     a blood request.
-
                 </p>
 
 
@@ -534,3 +625,4 @@
     @endauth
 
 </x-layout>
+

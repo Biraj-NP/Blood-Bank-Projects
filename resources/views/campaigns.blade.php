@@ -151,7 +151,7 @@
                             <i class="fa-solid fa-calendar-days"></i>
 
                             <span>
-                                28 July - 30 July 2026
+                                 {{ $Bloodcampaign->duration_time }}
                             </span>
 
                         </div>

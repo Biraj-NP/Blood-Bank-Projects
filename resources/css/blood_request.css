@@ -42,6 +42,7 @@
         0 25px 50px -12px rgba(220, 38, 38, 0.20);
 }
 
+
 .blood-request-grid {
     display: grid;
 
@@ -71,6 +72,7 @@
     );
 }
 
+
 .blood-drop-large {
     margin-bottom: 1rem;
 
@@ -78,6 +80,7 @@
 
     line-height: 1;
 }
+
 
 .blood-request-title {
     margin: 0;
@@ -91,6 +94,7 @@
     font-weight: 700;
 }
 
+
 .blood-request-subtitle {
     margin-top: 0.5rem;
 
@@ -103,11 +107,13 @@
     line-height: 1.5;
 }
 
+
 .blood-request-features {
     display: block;
 
     margin-top: 2rem;
 }
+
 
 .blood-request-feature-list {
     display: flex;
@@ -120,6 +126,7 @@
 
     font-size: 0.875rem;
 }
+
 
 .feature-dot {
     width: 0.5rem;
@@ -148,56 +155,139 @@
 
 
 /* =========================================================
-   SUCCESS MESSAGE
+   ALERT MESSAGE
 ========================================================= */
 
-.request-success-message {
+.alert {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 0.75rem;
+
     margin-bottom: 1.25rem;
 
-    padding: 0.75rem 1rem;
-
-    border: 1px solid #bbf7d0;
+    padding: 0.9rem 1rem;
 
     border-radius: 0.75rem;
 
-    background: #f0fdf4;
-
-    color: #15803d;
-
     font-size: 0.875rem;
+
+    line-height: 1.5;
+
+    animation: alertSlideDown 0.3s ease;
 }
 
 
 /* =========================================================
-   ERROR MESSAGE
+   ALERT ICON
 ========================================================= */
 
-.request-error-message {
-    margin-bottom: 1.25rem;
+.alert-icon {
+    width: 1.5rem;
 
-    padding: 1rem;
+    height: 1.5rem;
 
-    border: 1px solid #fecaca;
+    flex-shrink: 0;
 
-    border-radius: 0.75rem;
+    display: flex;
 
-    background: #fef2f2;
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 0.875rem;
+
+    font-weight: 700;
 }
 
-.request-error-message ul {
+
+.alert-message {
+    flex: 1;
+}
+
+
+/* =========================================================
+   SUCCESS ALERT
+========================================================= */
+
+.alert-success {
+    border: 1px solid #bbf7d0;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+}
+
+
+.alert-success .alert-icon {
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+/* =========================================================
+   ERROR ALERT
+========================================================= */
+
+.alert-danger {
+    border: 1px solid #fecaca;
+
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+
+.alert-danger .alert-icon {
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   VALIDATION ERROR LIST
+========================================================= */
+
+.alert-error-list {
     margin: 0;
 
     padding: 0;
 
     list-style: none;
-
-    color: #dc2626;
-
-    font-size: 0.875rem;
 }
 
-.request-error-message li + li {
+
+.alert-error-list li + li {
     margin-top: 0.25rem;
+}
+
+
+/* =========================================================
+   ALERT ANIMATION
+========================================================= */
+
+@keyframes alertSlideDown {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
 }
 
 
@@ -214,9 +304,11 @@
     gap: 1rem;
 }
 
+
 .request-field {
     min-width: 0;
 }
+
 
 .request-full-field {
     grid-column: span 2;
@@ -238,6 +330,7 @@
 
     font-weight: 500;
 }
+
 
 .required-star {
     color: #dc2626;
@@ -277,6 +370,7 @@
         box-shadow 0.2s ease;
 }
 
+
 .request-input:focus {
     background: #ffffff;
 
@@ -286,9 +380,11 @@
         0 0 0 4px rgba(220, 38, 38, 0.10);
 }
 
+
 .request-input::placeholder {
     color: #9ca3af;
 }
+
 
 select.request-input {
     cursor: pointer;
@@ -306,6 +402,7 @@ select.request-input {
 
     cursor: not-allowed;
 }
+
 
 .request-readonly:focus {
     background: #f3f4f6;
@@ -353,6 +450,7 @@ select.request-input {
         box-shadow 0.2s ease;
 }
 
+
 .request-textarea:focus {
     background: #ffffff;
 
@@ -362,13 +460,16 @@ select.request-input {
         0 0 0 4px rgba(220, 38, 38, 0.10);
 }
 
+
 .request-textarea::placeholder {
     color: #9ca3af;
 }
 
+
 .request-address-textarea {
     min-height: 80px;
 }
+
 
 .request-cause-textarea {
     min-height: 100px;
@@ -391,6 +492,7 @@ select.request-input {
     margin-top: 0.25rem;
 }
 
+
 .request-gender-option {
     display: flex;
 
@@ -404,6 +506,7 @@ select.request-input {
 
     cursor: pointer;
 }
+
 
 .request-gender-option input {
     width: 1rem;
@@ -427,6 +530,7 @@ select.request-input {
 
     margin-top: 0.5rem;
 }
+
 
 .request-submit-btn {
     width: 100%;
@@ -458,6 +562,7 @@ select.request-input {
         box-shadow 0.3s ease;
 }
 
+
 .request-submit-btn:hover {
     transform: translateY(-2px);
 
@@ -465,9 +570,11 @@ select.request-input {
         0 10px 20px rgba(220, 38, 38, 0.25);
 }
 
+
 .request-submit-btn:active {
     transform: translateY(0);
 }
+
 
 .request-submit-btn:focus {
     outline: none;
@@ -489,9 +596,11 @@ select.request-input {
     border-top: 1px solid #f3f4f6;
 }
 
+
 .donor-registration-content {
     text-align: center;
 }
+
 
 .donor-question {
     margin: 0 0 0.5rem;
@@ -500,6 +609,7 @@ select.request-input {
 
     font-size: 0.875rem;
 }
+
 
 .donor-registration-btn {
     display: inline-flex;
@@ -528,6 +638,7 @@ select.request-input {
         background-color 0.2s ease,
         transform 0.2s ease;
 }
+
 
 .donor-registration-btn:hover {
     background: #fee2e2;
@@ -560,6 +671,7 @@ select.request-input {
     font-family: 'Poppins', Arial, sans-serif;
 }
 
+
 .blood-request-login-card {
     width: 100%;
 
@@ -589,6 +701,7 @@ select.request-input {
 
     margin-bottom: 1.25rem;
 }
+
 
 .login-blood-icon {
     width: 5rem;
@@ -625,6 +738,7 @@ select.request-input {
     font-weight: 700;
 }
 
+
 .login-request-description {
     margin: 0.75rem 0 0;
 
@@ -635,6 +749,7 @@ select.request-input {
     line-height: 1.5rem;
 }
 
+
 .login-request-divider {
     margin-top: 1.5rem;
 
@@ -642,6 +757,7 @@ select.request-input {
 
     border-top: 1px solid #f3f4f6;
 }
+
 
 .login-request-message {
     margin: 0 0 1rem;
@@ -685,6 +801,7 @@ select.request-input {
         transform 0.2s ease;
 }
 
+
 .login-request-btn:hover {
     background: #b91c1c;
 
@@ -714,6 +831,7 @@ select.request-input {
         color 0.2s ease;
 }
 
+
 .back-home-btn:hover {
     color: #dc2626;
 }
@@ -729,11 +847,13 @@ select.request-input {
         grid-template-columns: 1fr;
     }
 
+
     .blood-request-left {
         min-height: 280px;
 
         padding: 2rem;
     }
+
 
     .blood-request-right {
         max-height: none;
@@ -741,11 +861,13 @@ select.request-input {
         padding: 1.5rem;
     }
 
+
     .blood-request-title {
         font-size: 2rem;
 
         line-height: 2.25rem;
     }
+
 
     .blood-request-features {
         display: none;
@@ -763,28 +885,41 @@ select.request-input {
         padding: 0.75rem;
     }
 
+
     .request-form-grid {
         grid-template-columns: 1fr;
     }
+
 
     .request-full-field,
     .request-submit-wrapper {
         grid-column: span 1;
     }
 
+
     .blood-request-left {
         padding: 1.5rem;
     }
+
 
     .blood-request-right {
         padding: 1.25rem;
     }
 
+
     .blood-request-login-card {
         padding: 2rem 1.5rem;
     }
 
+
     .request-gender-options {
         gap: 0.75rem;
+    }
+
+
+    .alert {
+        padding: 0.8rem 0.85rem;
+
+        font-size: 0.8125rem;
     }
 }

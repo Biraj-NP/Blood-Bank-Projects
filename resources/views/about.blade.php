@@ -33,21 +33,22 @@
 
                 @foreach ($aboutFeatures as $aboutFeature)
 
-                    <div class="about-feature-card">
+                <div class="about-feature-card">
 
-                        <div class="about-feature-icon">
-                            <i class="{{ $aboutFeature->icon }}"></i>
-                        </div>
+                    <div class="about-feature-icon">
 
-                        <h2 class="about-feature-title">
-                            {{ $aboutFeature->title }}
-                        </h2>
-
-                        <p class="about-feature-description">
-                            {!! $aboutFeature->description !!}
-                        </p>
-
+                        <i class="{{ $aboutFeature->icon }}"></i>
                     </div>
+
+                    <h2 class="about-feature-title">
+                        {{ $aboutFeature->title }}
+                    </h2>
+
+                    <p class="about-feature-description">
+                        {!! $aboutFeature->description !!}
+                    </p>
+
+                </div>
 
                 @endforeach
 
@@ -59,6 +60,8 @@
 
 
     {{-- What We Provide --}}
+    {{-- What We Provide --}}
+
     <section class="provide-section">
 
         <div class="about-container">
@@ -76,26 +79,25 @@
 
             </div>
 
-
             <div class="provide-grid">
 
-                @foreach ($SmallFeatursOfBloodBank as $SmallFeatursOfBloodBank)
+                @foreach ($SmallFeatursOfBloodBank as $feature)
 
-                    <div class="provide-card">
+                <div class="provide-card">
 
-                        <div class="provide-icon">
-                            <i class="{{ $SmallFeatursOfBloodBank->small_icon }}"></i>
-                        </div>
-
-                        <h3 class="provide-card-title">
-                            {{ $SmallFeatursOfBloodBank->small_title }}
-                        </h3>
-
-                        <p class="provide-card-description">
-                            {{ $SmallFeatursOfBloodBank->small_description }}
-                        </p>
-
+                    <div class="about-feature-icon">
+                        <i class="{{ $feature->small_icon }}"></i>
                     </div>
+
+                    <h3 class="provide-card-title">
+                        {{ $feature->title }}
+                    </h3>
+
+                    <p class="provide-card-description">
+                        {{ $feature->small_description }}
+                    </p>
+
+                </div>
 
                 @endforeach
 
@@ -122,23 +124,21 @@
 
             @auth
 
-                {{-- Login भएको user --}}
-                <a
-                    href="{{ route('doner_register') }}"
-                    class="about-cta-button"
-                >
-                    Become a Donor
-                </a>
+            {{-- Login भएको user --}}
+            <a
+                href="{{ route('doner_register') }}"
+                class="about-cta-button">
+                Become a Donor
+            </a>
 
             @else
 
-                {{-- Login नभएको user --}}
-                <a
-                    href="{{ route('login') }}"
-                    class="about-cta-button"
-                >
-                    Login to Become a Donor
-                </a>
+            {{-- Login नभएको user --}}
+            <a
+                href="{{ route('login') }}"
+                class="about-cta-button">
+                Login to Become a Donor
+            </a>
 
             @endauth
 

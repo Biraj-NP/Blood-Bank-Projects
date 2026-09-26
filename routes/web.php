@@ -43,4 +43,5 @@ Route::middleware('auth')->group(function () {
     // Normal logout
     Route::get('/logout', [AuthController::class,'logout'])->name('logout');
     //   post logout pani support garne
-    Route::post('/logout', [AuthController::class,'logout'])->name('logout.post');});
+    Route::post('/logout', [AuthController::class,'logout'])->name('logout.post');
+    });
